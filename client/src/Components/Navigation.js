@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 //import MailIcon from "@mui/icons-material/Mail";
 const pages = ["calculate", "news"];
 const Navigation = () => {
@@ -52,8 +53,9 @@ const Navigation = () => {
                   {/* <MailIcon /> */}
                 </Badge>
               </IconButton>
-
-              <Button color="inherit">Login</Button>
+              <Link to="/signup">
+                <Button color="inherit">Signup</Button>
+              </Link>
               <Button color="inherit">Logout</Button>
             </Box>
           </Toolbar>

@@ -4,6 +4,7 @@ import Main from "./Components/Main";
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Signup from "./Components/Signup";
 
 const theme = createTheme({
   palette: {
@@ -19,6 +20,7 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </ThemeProvider>
     </div>

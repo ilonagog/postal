@@ -46,6 +46,9 @@ class Package(db.Model):
 
     user = db.relationship("User", backref=db.backref('packages'))
 
+    def __repr__(self):
+        return f'<Package: ID: {self.id}, Tracking Number: {self.tracking_number}, Status: {self.status}>'
+
 class Shipment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     package_id =  db.Column(db.Integer, db.ForeignKey('packages.id'), nullable=False)
@@ -57,10 +60,15 @@ class Shipment(db.Model):
 
     package= db.relationship('Package', backref=db.backref('shipments'))
 
+  def __repr__(self):
+        return f'<Shipment: ID: {self.id}, Package ID: {self.package_id}, Destination Country: {self.destination_country}, Status: {self.status}>'
 
 class Country(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name =  db.Column(db.String, unique=True, nullable=False)
     code = db.Column(db.String, unique=True, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f'<Country: ID: {self.id}, Name: {self.name}, Code: {self.code}>'
 
