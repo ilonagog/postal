@@ -5,8 +5,11 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
+import { Button } from "@mui/material";
 //import MailIcon from "@mui/icons-material/Mail";
+const pages = ["calculate", "news"];
 const Navigation = () => {
+  const handleClick = () => {};
   return (
     <div className="navigation">
       <Box sx={{ flexGrow: 1 }}>
@@ -27,6 +30,17 @@ const Navigation = () => {
             >
               Cargo
             </Typography>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleClick}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <IconButton
@@ -38,6 +52,9 @@ const Navigation = () => {
                   {/* <MailIcon /> */}
                 </Badge>
               </IconButton>
+
+              <Button color="inherit">Login</Button>
+              <Button color="inherit">Logout</Button>
             </Box>
           </Toolbar>
         </AppBar>
