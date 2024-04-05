@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Navigation from "./Components/Navigation";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Signup from "./Components/Signup";
+import Login from "./Components/Login";
 
 const theme = createTheme({
   palette: {
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </ThemeProvider>
     </div>
