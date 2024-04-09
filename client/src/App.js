@@ -6,6 +6,7 @@ import Navigation from "./Components/Navigation";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
+import Countries from "./Components/Countries";
 
 const theme = createTheme({
   palette: {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/countries" element={<Countries />} />
         </Routes>
       </ThemeProvider>
     </div>
